@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="am2">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head
+         content must come *after* these tags -->
+    <title>Layout Calculator</title>
+  
+</head>
+<body>
+
+<div ng-controller="dishDetailController as dishDtlCtrl">
+  total seats: <input type="text" label="Sort" name="sort_box" ng-model="total_seats" />Enter the amount of seats the plane has in 100% economy seats<br/>
+  required economy<input type="text" label="Sort" name="sort_box" ng-model="required_economy" /><br/>
+   required bussiness<input type="text" label="Sort" name="sort_box" ng-model="required_bussiness" /><br/>
+    required first<input type="text" label="Sort" name="sort_box" ng-model="required_first" /><br/>
+	max offset<input type="text" label="Sort" name="sort_box" placeholder="0.2" ng-model="max_offset"   />0.2 is a good starting value, decrease if you get to much results, increase if you get no results<br/>
+  <button ng-click="check()">Calculate suggested layout</button>                 
+     <div ng-repeat="comment in dishDtlCtrl.possible_layouts.layouts">
+	 <p>E: {{comment.economy}}, B: {{comment.bussiness}}, F: {{comment.first}}</p>
+</div>	 
+
+
+
+  
+        
+  
+  
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.js"></script>
+<script>
+        var app = angular.module('am2', []);
+        app.controller('dishDetailController', function ($scope) {
+		
+		
+		
+  $scope.check = function () {
+  possible_layouts.layouts = [];
+  var initialTotal = this.total_seats;
+  var sliderEconomy = initialTotal;
+  var sliderBussiness = initialTotal;
+  
+  var economySeats = 0;
+  var bussinessSeats = 0;
+  var firstSeats = 0;
+  
+  var tempSeats;
+  var currentEconomyPercentage;
+  var currentBussinessPercentage;
+  var currentFirstPercentage;
+  
+    console.log(initialTotal); // used 'this' instead of $scope
+	
+	for (; sliderEconomy >= 0; sliderEconomy--) {
+			sliderBussiness = initialTotal;
+			for (; sliderBussiness >= sliderEconomy; sliderBussiness--) {
+				//PossibleLayout layout = setSeats();
+				economySeats = sliderEconomy;
+				bussinessSeats =  Math.floor((sliderBussiness - sliderEconomy) / 2);
+				firstSeats = Math.floor((initialTotal - (sliderEconomy + (sliderBussiness - sliderEconomy))) / 4);
+				tempSeats = economySeats+bussinessSeats+firstSeats;
+				currentEconomyPercentage = economySeats / tempSeats * 100;
+				currentBussinessPercentage = bussinessSeats / tempSeats * 100;
+				currentFirstPercentage = firstSeats / tempSeats * 100;
+				
+				
+				if(currentEconomyPercentage >= this.required_economy-parseFloat(this.max_offset) && currentEconomyPercentage <= parseFloat(this.required_economy)+parseFloat(this.max_offset) && currentBussinessPercentage >= this.required_bussiness-parseFloat(this.max_offset) && currentBussinessPercentage <= parseFloat(this.required_bussiness)+parseFloat(this.max_offset) && currentFirstPercentage >= this.required_first-parseFloat(this.max_offset) && currentFirstPercentage <= parseFloat(this.required_first)+parseFloat(this.max_offset)) {
+				console.log("this is good");
+				console.log("economy: " + sliderEconomy + ", bussiness: " + bussinessSeats + ", first: " + firstSeats + ", current eco %: " +currentEconomyPercentage + ", current bus %: " +currentBussinessPercentage + ", current first %: " +currentFirstPercentage);
+				var tempObject = {economy: sliderEconomy
+                        , bussiness: bussinessSeats
+                        , first: firstSeats};
+						var found = false;
+				
+				possible_layouts.layouts.push(tempObject);
+				
+				
+				}
+			}
+		}
+	
+	
+  };
+
+		
+            var possible_layouts = {
+                layouts: [ ]
+            };
+            this.possible_layouts = possible_layouts;
+			
+        });
+    </script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-88805563-1');
+ga('send', 'pageview');
+
+</script></body>
+</html>
