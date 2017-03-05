@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration|Form</title>
+<link rel="stylesheet" href="css/form.css" type="text/css">
+<script type="text/javascript" src="js/form.js"></script>
+</head>
+<body>
+<div class="reghead"><image style="height:40px; widht:40px; border-radius:10px;" src="https://almaprod.s3.amazonaws.com/media/campus/3498-128_128.jpeg">&nbspACPCE Computer Departmemt(Diploma)</image></div></br>
+<hr>
+      <ul id="nav">
+    <li><a href="index.html" >Home</a></li>
+    <li><a href="#">Gallery</a>
+   
+    </li>
+    
+    <li><a href="form.html" class="current first">Register(Course)</a></li>
+    
+    <li><a href="#">Contact</a></li>
+    <li><a href="images/win.gif">Login</a></li>
+  </ul>
+<div class="reg1"><center><b>Course Registaration Form</b></center></div><br></br>
+
+<div class="reg2"><form name="myForm" action="suc.html"
+onsubmit="return validateForm()" method="post">
+
+</br>&nbsp&nbsp<select required class="user_input">
+  <option value="">Slect Year</option>
+  <option value="fy">1st Year</option>
+  <option value="sy">2nd Year</option>
+  <option value="ty">3rd Year</option>
+  <option value="fry">4th Year</option>
+</select><br></br>
+&nbsp&nbsp<input type="text" class="user_input" name="fname" placeholder="First Name"><br></br>
+&nbsp&nbsp<input type="text" class="user_input" name="lname" placeholder="Last Name"><br></br>
+&nbsp&nbsp<input type="text" class="user_input" name="email" placeholder="Email"><br></br>
+&nbsp&nbspGender: <input type="radio"  name="gender" value="Male"> Male
+<input type="radio"  name="gender" value="Female"> Female<br></br>
+&nbsp&nbspCourse:
+&nbsp<input type="checkbox" name="course" value="C" />C Programing<br/>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="checkbox" name="course" value="C++"/>C++<br/>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="checkbox" name="course" value="Java"/>Java<br/>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="checkbox" name="course" value="C#"/>C#<br><br/>
+<br>&nbsp&nbsp&nbsp&nbspFees:
+<input type="radio" name="course" value="installment" >Pay in Installment<br/>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="course" value="total" >Pay Total Fees<br/>
+<br></br>
+&nbsp&nbsp<input type="submit" class="user_buttons"  value="Submit">&nbsp<input type="Reset" class="user_buttons2" Value="Reset">
+</div>
+<hr>
+</form>
+<div class="copy"><p class="copyright">Copyright &copy; <a href="https://tonylab.000webhostapp.com/">Tony Project Lab</a> - All Rights Reserved </p>
+</body>
+</html>

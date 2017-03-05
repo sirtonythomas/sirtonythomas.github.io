@@ -1,0 +1,46 @@
+body {
+    background-image:url(http://www.uksoftech.com/wp-content/uploads/2016/02/website-design-background.png);
+    background-position:stretch;
+    background-attachment:fixed;
+    background-size:100% 100%;
+}
+.reghead{
+    background-color:transparent;
+    color:white;
+    font-size:40px;
+    text-align:center;
+}
+.reg1{
+    background-color:transparent;
+    color:white;
+    font-size:27px;
+    text-align:center;
+}
+.reg2{
+    width: 300px;
+    height: 580px;
+    border: 3px solid gold;
+    background-color:white;
+    color:black;
+    font-size:19px
+}
+.user_input{
+    height:30px;
+    border-radius:10px;
+    color:black;
+    font-size:15px;
+    background-color:transparent;
+    
+}
+.user_buttons{
+    height:30px;
+    background-color:green;
+    border-radius:20px;
+    color:black;
+}
+.user_buttons2{
+    height:30px;
+    background-color:red;
+    border-radius:20px;
+    color:black; 
+}

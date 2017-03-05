@@ -1,0 +1,126 @@
+body {
+    background-image:url(http://www.uksoftech.com/wp-content/uploads/2016/02/website-design-background.png);
+    background-position:stretch;
+    background-attachment:fixed;
+    background-size:100% 100%;
+}
+.reghead{
+    background-color:transparent;
+    color:white;
+    font-size:40px;
+    text-align:center;
+}
+.reg1{
+    background-color:transparent;
+    color:white;
+    font-size:27px;
+    text-align:center;
+}
+.reg2{
+    width: 300px;
+    height: 580px;
+    border: 3px solid gold;
+    background-color:white;
+    color:black;
+    font-size:19px
+}
+.user_input{
+    height:30px;
+    border-radius:10px;
+    color:black;
+    font-size:15px;
+    background-color:transparent;
+    
+}
+.user_buttons{
+    height:30px;
+    background-color:green;
+    border-radius:20px;
+    color:black;
+}
+.user_buttons2{
+    height:30px;
+    background-color:red;
+    border-radius:20px;
+    color:black; 
+}
+.copy{
+    background-color:transparent;
+    color:orange;
+    font-size:20px;
+    text-align:center;
+}
+#nav{
+	float:left;
+	margin:18px 0 12px 0px;
+	padding:0;
+}
+#nav li a, #nav li{
+	float:left;
+}
+#nav li{
+	position:relative;
+}
+#nav li a{
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:24px;
+	color:#222;
+}
+#nav li a:hover{
+	color:#ff7200;
+}
+#nav li .current{
+	color:#ff7200;
+}
+#nav li a{
+	padding:0 25px;
+}
+#nav li a.first{
+	padding-left:0;
+}
+/* -- Sub Menu -- */
+#nav li ul{
+	display:none;
+	position:absolute;
+	left:25px;
+	top:110%;
+	padding:0;
+	margin:0;
+	border:1px #ddd solid;
+	background:#eee !important;
+}
+#nav li ul li:hover{
+	background:#ff7200;
+}
+#nav li ul li a:hover{
+	color:#fff;
+}
+#nav li:hover > ul{
+	display:block;
+}
+#nav li ul li, #nav li ul li a{
+	float:none;
+}
+#nav li ul li a{
+	padding:10px;
+	width:200px;
+	display:block;
+	font-size:18px;
+	text-transform:none;
+}
+/* -- Sub-Sub Menu -- */
+#nav li ul li ul{
+	display:none;
+}
+#nav li ul li:hover ul{
+	left:100%;
+	top:0;
+}
+#nav li ul li ul li a{
+	padding:10px;
+	width:200px;
+	display:block;
+	font-size:18px;
+	text-transform:none;
+}
